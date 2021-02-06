@@ -24,6 +24,10 @@ the name was derived from Monty Python's Flying Circus.
 - in
 - not in
 
+### != is not `is not`
+
+`is` and `is not` operators compare the identity of two objects. it checks whether two objects refer to the same object in memory.
+
 ## variables
 
 variables are not statically typed.
@@ -202,6 +206,8 @@ my_dict = dict({1:'apple', 2:'ball'})
 
 # from sequence having each item as a pair
 my_dict = dict([(1,'apple'), (2,'ball')])
+
+my_dict.get("harris", 0) # will return 0 if not found
 ```
 
 accessing values uses keys through `[]`(produce `KeyError` when not found) or `get()`(returns `none` when not found).
@@ -212,7 +218,7 @@ have dictionary comprehension.
 
 we can open file in text mode or binary mode(used when dealing with non-text).
 
-use `open()`.
+use `open()`. this will not give the actual data of the file but the file handle.
 
 encoding is involved for text file.
 
@@ -228,6 +234,11 @@ with open("test.txt", encoding = 'utf-8') as f:
 ```
 
 you can read file w `for loop`. its fast and efficient.
+
+### file reading method
+
+- looping(because files are consisting of text with `\n` at the end of every line)
+- reading the whole file using `read()`
 
 # Objects
 

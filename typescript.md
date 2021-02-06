@@ -8,14 +8,15 @@
 
 ## Types
 
-- number(no diff between int and float)
-- string
-- boolean
-- object
-- array
-- tuple
-- enum
-- any
+1. number(no diff between int and float)
+2. string
+3. boolean
+4. object
+5. array
+6. tuple
+7. enum
+8. any
+9. BigInt
 
 ### number
 
@@ -68,7 +69,18 @@ const person: {
 
 ### Enum
 
-- automatically enumerated global constant identifiers
+- Enums or enumerations allow us to declare a set of named constants a collection of related values that can be numeric or string values.
+
+three types of enums:
+
+- Numeric
+- String
+- Heterogeneous
+
+### Numeric Enums
+
+- are number-based enums they store string values as numbers.
+-
 
 ## Union types
 
@@ -164,14 +176,53 @@ tsc // after the above command this command will compile all available typescrip
 - code quality checks(unused var, implicit return type)
 - experimental options
 
-##
-
 ## coder note
 
 - dont open the ts and js file at the same time(in diffrent tabs). it will produce duplicate function error
 - there is `any` type but using it will lose the benefit of typescript so use it less(use js la if still want to use any)
 - `+varName` will convert to number
 
-```
+## Interface
 
-```
+interface is like a contract, a "model" for your entitiy.
+
+code editor will detect the type for each properties.
+
+can be extended like `Class`.
+
+can describe function, not only objects.
+
+## type
+
+used to describe a custom shape, but its just an alias, or put in another way, a label for a custom type.
+
+interface and type are used interchangeably in TypeScript.
+
+use interface over type alias if possible.
+
+## Access Modifiers
+
+access modifiers specifies the accessibilty or scope of a field, method, constructor, or class.
+
+three types of access modifiers: - public - private - protected
+
+### Public
+
+public members can be accessed anywhere without any restrictions. all members of a class are public by default.
+
+TS will treat any property and methods as public by default if no modifier is applied.
+
+### Private
+
+ensure that class members are visible only visible to that class and are not accessible outside the containing class.
+
+### Protected
+
+similar to private except that protected members can be accessed using their deriving classes.
+
+## Decorators
+
+- is a pattern in programming in which you wrap something to change its behavior.
+- a special kind of declaration that can be applied to classes, methods, accessor, property, or parameter.
+- a function that are prefixed `@expression`, where expression must evaluate to a function that will be called at runtime with information about the decorated declaration.
+-

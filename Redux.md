@@ -78,5 +78,55 @@ with redux-thunk we can return function from action creator not just objects.
 
 redux saga structure can live in a single file containing:
 
-- a watcher function (a generator function watching for every action we are interested in)
-- a worker function (a generator function that will perform API call)
+- a watcher function
+- a worker function
+
+#### watcher
+
+- a generator function watching for every action we are interested in
+
+#### worker function
+
+- a generator function that will perform API call
+- take the actual **action** as parameter.
+
+## Redux toolkit
+
+- simplify store creation.
+
+### configureStore()
+
+accept a configuration where you can define:
+
+- root reducer
+- middleware
+- optional store enhancers
+- a preloaded state
+
+Whats included:
+
+- redux dev tool
+- redux-thunk
+
+### createAction
+
+get rid of action creators and named actions to condense all in one place.
+
+### createReducers
+
+takes an initial state, and a mapping object where:
+
+- properties in this mapping are action types
+- values are reducing function
+
+uses immer under the hood, which allows for writing mutative logic which in reality does not alter the original object.
+
+### createSlice
+
+able to keep everything in a single place: reducers, action creators, state
+
+return **action creators** and **reducer**(reducer is used in configureStore).
+
+### createAsyncThunk
+
+automatically create an action creator for each Promise state.
