@@ -47,3 +47,13 @@ The **waiting area** is athe buffer. A small physical location (usually in the R
 
 - **Blocking vs non-blocking software development** ― blocking executes synchronously and non-blocking asynch-ly.
 - `_dirname` ― returns the path of the folder where the current Javascript file resides. tells you the absolute path of the directory containing the currently executing file.
+
+## File Upload with Multer in Node.js and express
+
+- web client uploads a file to a server through a form and encoded as `multipart/form-data`.
+- Multer is a middleware for Express and Node.js that makes it easy to handle this `multipart/form-data`.
+
+
+### How does Multer work?
+
+- act as a helper when uploading files.

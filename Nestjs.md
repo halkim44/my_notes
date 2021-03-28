@@ -151,6 +151,10 @@ are executed after middlewares, but before interceptor or pipe.
 
 guard must implement `canActivate()` function which return boolean. can return either async or sync. **true** will proceed, falls will deny request.
 
+### Execution context
+
+
+
 ## Encryption and Hashing
 
 Nest has built-in **crypto module** that you can use to encrypt and decrypt strings, numbers, buffers, streams, and more.
@@ -274,3 +278,5 @@ In general, the request lifecycle looks like the following:
 - Global interceptor (post-request)
 - Exception filters (route, then controller, then global)
 - Server response
+
+## Guards

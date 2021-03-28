@@ -225,4 +225,3 @@ similar to private except that protected members can be accessed using their der
 - is a pattern in programming in which you wrap something to change its behavior.
 - a special kind of declaration that can be applied to classes, methods, accessor, property, or parameter.
 - a function that are prefixed `@expression`, where expression must evaluate to a function that will be called at runtime with information about the decorated declaration.
--
