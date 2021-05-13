@@ -225,3 +225,120 @@ similar to private except that protected members can be accessed using their der
 - is a pattern in programming in which you wrap something to change its behavior.
 - a special kind of declaration that can be applied to classes, methods, accessor, property, or parameter.
 - a function that are prefixed `@expression`, where expression must evaluate to a function that will be called at runtime with information about the decorated declaration.
+
+## Object Types
+
+### Extending types
+
+- copy members from other named types and add whatever new members we want.
+- useful in cutting down the amount of type declaration boilerplate we have to write.
+
+### Extending and Intersection
+
+- both do almost the same thing
+- the main difference is how conflict is handled
+
+## Generic Types
+
+```ts
+// instead of this
+interface NumberBox {
+  contents: number;
+}
+interface StringBox {
+  contents: string;
+}
+interface BooleanBox {
+  contents: boolean;
+}
+
+// we can write it like this
+interface Box<Type> {
+  contents: Type;
+}
+type OrNull<Type> = Type | null;
+type OneOrMany<Type> = Type | Type[];
+```
+
+### The Array Type
+
+`Array` itself is a generic type.
+
+```ts
+interface Array<Type> {
+  /**
+   * Gets or sets the length of the array.
+   */
+  length: number;
+
+  /**
+   * Removes the last element from an array and returns it.
+   */
+  pop(): Type | undefined;
+
+  /**
+   * Appends new elements to an array, and returns the new length of the array.
+   */
+  push(...items: Type[]): number;
+
+  // ...
+}
+```
+
+### The ReadonlyArray Type
+
+- a special type that describe array that shouldn't be changed.
+- we can set an Array without worrying about the content being changed.
+- unlike `Array`, no constructor we can use instead we can assign Arrays to ReadonlyArrays:
+
+```TS
+const roArray: ReadonlyArray<string> = ["red", "green", "blue"];
+```
+
+- TS also provides a shorthand syntax for `ReadonlyArray<Type>` with `readonly Type[]`.
+- unlike the readonly property modifier, assignability isn’t bidirectional between regular Arrays and ReadonlyArrays.
+
+```TS
+let x: readonly string[] = [];
+let y: string[] = [];
+
+x = y;
+y = x;
+```
+
+### Tuple Types
+
+- another sort of Array types that knows exactly how many elements it contains, and exactly which types it contains at specific positions.
+- will get an error if try to index past the number of elements.
+- can be destructured using JS Array destructuring.
+- can have optional props
+- can also have rest elements, which have to be an array/tuple type.
+- rest and optional element in Tuple is useful in function parameters.
+
+```ts
+// this
+function readButtonInput(...args: [string, number, ...boolean[]]) {
+  const [name, version, ...input] = args;
+  // ...
+}
+
+// is equal to
+function readButtonInput(name: string, version: number, ...input: boolean[]) {
+  // ...
+}
+```
+
+- tuples can also be `readonly`.
+
+## Creating Types from Types
+
+### Generics
+
+```ts
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+```
+
+- `<Types>` allows us to capture the type the user provides.
+-

@@ -1,0 +1,17 @@
+
+Operating System Schedule:
+  ✔ Introduction @started(21-04-10 22:39) @done(21-04-11 00:34)
+  ✔ OS Structure @started(21-04-11 15:34) @done(21-04-13 22:41) @lasted(2d7h7m34s)
+  ✔ Processes @started(21-04-13 22:41) @done(21-04-29 15:13) @lasted(2w1d16h32m29s)
+  ✔ Threads @done(21-04-29 15:13)
+  ☐ Process Sync
+  ☐ CPU Scheduling
+  ☐ DeadLocks
+  ☐ Main Memory
+  ☐ Virtual Memory
+  ☐ Mass Storage System
+  ☐ File System Interface
+  ☐ File System Implementation
+  ☐ I/O Systems
+  ☐ Protection
+  ☐ Security

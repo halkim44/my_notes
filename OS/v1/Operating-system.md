@@ -4,8 +4,8 @@
 
 ### What is OS
 
-- A collection of software that manages computer hardware and provices services for programs.
-- hides hardware complexitiesz
+- A collection of software that manages computer hardware and provides services for programs.
+- hides hardware complexities
 - manage computational resources
 - provides isolation and protection
 - has privilege access to the underlying hardware
